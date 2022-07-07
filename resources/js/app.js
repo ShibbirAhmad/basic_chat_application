@@ -35,9 +35,11 @@ message_send_btn.addEventListener('click', function (event) {
 
     axios(options)
 
+    message_input.value = '';
+
 })
 
 
 window.Echo.channel('my-channel').listen('.my-event', (e) => {
-    message_el.innerHTML += `<div class="message"> <strong> ${e.username} :</strong> ${e.message} </div>`;
+    message_el.innerHTML += `<div class="message"> ${e.message} </div>`;
 })

@@ -2093,9 +2093,10 @@ message_send_btn.addEventListener('click', function (event) {
     }
   };
   axios(options);
+  message_input.value = '';
 });
 window.Echo.channel('my-channel').listen('.my-event', function (e) {
-  message_el.innerHTML += "<div class=\"message\"> <strong> ".concat(e.username, " :</strong> ").concat(e.message, " </div>");
+  message_el.innerHTML += "<div class=\"message\"> ".concat(e.message, " </div>");
 });
 
 /***/ }),
